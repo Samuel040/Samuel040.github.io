@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autobiography</title>
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <!-- website logo -->
+    <link rel="icon" type="image/png" href="./favicon.png">
+</head>
+<body onload="startTime()">
+<!-- music -->
+<audio controls autoplay  id="audio">
+  <source src="./music.mp3" type="audio/mpeg">
+</audio>
+<!-- time -->
+<p> Date/Time: <span id="clock"></span></p>
+<script>
+var dt = new Date();
+
+function startTime(){
+      var today = new Date();
+      var year = today.getFullYear()
+      var month = today.getMonth()+1
+      var date = today.getDate()
+      var hh = today.getHours();
+      var mm = today.getMinutes();
+      var ss = today.getSeconds();
+      mm = checkTime(mm);
+      ss = checkTime(ss);
+      document.getElementById('clock').innerHTML = month + '-' + date + '-' + year + " " + hh + ":" + mm + ":" + ss;
+      var timeoutId = setTimeout(startTime, 1000);
+    }
+function checkTime(i){
+      if(i < 10) {
+        i = "0" + i;
+      }
+      return i;
+    }
+</script>
+
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+        <a class="navbar-item">
+            My website
+        </a>
+        </div>
+    </div>
+</nav>
+<!-- content -->
+<section class="section" style="background: grey;">
+    <div class="container">
+        <div class="tile is-ancestor">
+            <div class="tile is-parent">
+                <article class="tile is-child notification is-info">
+                    <p class="title">Ko, Chun Yi</p>
+                    <!-- shape of image -->
+                    <figure class="image is-1by1">
+                        <img src="./my_image.jpg">
+                    </figure>
+                </article>
+            </div>
+            <div class="tile is-vertical is-8">
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-warning">
+                        <p class="title">About Me</p>
+                        <div class="content">
+                            <!-- content -->
+                            <style> </style>
+                            <h5> 我是柯均嶧，畢業於
+                                <a href="http://www.wghs.tp.edu.tw/" style="color:blue" onMouseOver="style.color='red'" onMouseOut="this.style.color='blue'">私立薇閣高級中學</a>
+                                ，現今就讀於 <a href="https://web.ee.ntu.edu.tw/" style="color:blue" onMouseOver="style.color='red'" onMouseOut="this.style.color='blue'">臺灣大學電機工程學系一年級。</a>
+                            </h5>
+                            <h5>我的興趣有三。第一，我熱愛運動，尤其喜愛
+                                <a href="https://www.nba.com/?51" style="color:blue" onMouseOver="style.color='red'" onMouseOut="this.style.color='blue'">打籃球</a>，，因此常常觀看NBA，看各個球星在球場大放異彩。
+                                第二，我喜歡
+                                <a href="https://ani.gamer.com.tw/" style="color:blue" onMouseOver="style.color='red'" onMouseOut="this.style.color='blue'">看動漫</a>，每每隨著劇情的高潮迭起，總讓人熱血沸騰，不僅如此，有些劇情背後也常藏有許多人生哲理，觀影後也會有一些感觸。
+                                第三，我也喜歡在課堂後的休息時間
+                                <a href="https://supercell.com/en/games/brawlstars/" style="color:blue" onMouseOver="style.color='red'" onMouseOut="this.style.color='blue'">玩手遊</a>，不僅僅是課業轟炸後的放鬆環節，更是能和同儕間培養一點默契，一起玩多人遊戲（例：Brawl Stars）。
+                            </h5>
+                            <h1>我是大鼻子</h1>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+</body>
+</html>
